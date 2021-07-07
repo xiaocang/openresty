@@ -7,7 +7,6 @@ language: c
 
 compiler:
   - gcc
-  - clang
 
 addons:
   apt:
@@ -72,14 +71,11 @@ env:
     - OPENSSL_INC=$OPENSSL_PREFIX/include
     - OPENRESTY_PREFIX=/opt/openresty
   matrix:
-    - OPENSSL_VER=1.0.2u OPENSSL_PATCH_VER=1.0.2h
     - OPENSSL_VER=1.1.0l OPENSSL_PATCH_VER=1.1.0d
     - OPENSSL_VER=1.1.1k OPENSSL_PATCH_VER=1.1.1f
 
 jobs:
     include:
-        - <<: *linux-s390x
-          env: OPENSSL_VER=1.0.2u OPENSSL_PATCH_VER=1.0.2h
         - <<: *linux-s390x
           env: OPENSSL_VER=1.1.0l OPENSSL_PATCH_VER=1.1.0d
         - <<: *linux-s390x
